@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API Response</title>
+  <style>
+    body {
+      background-color: #000;
+      color: yellowgreen;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello from the frontend</h1>
+
+  <h2>API Data:</h2>
+  <ul>
+    <!-- Loop through the data array and display each name -->
+    <% data.data.forEach(function(name) { %>
+      <li><%= name %></li>
+    <% }); %>
+  </ul>
+</body>
+</html>

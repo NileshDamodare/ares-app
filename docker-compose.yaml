@@ -1,0 +1,28 @@
+version: '3.6'
+
+services:
+  backend:
+    build: ./backend
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    networks:
+      - ares-networks
+
+  frontend:
+    build: ./frontend
+    hostname: frontend-host
+    volumes:
+      - ./frontend:/app
+    environment:
+      - BACKEND_URL=http://backend:8000/api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - ares-networks
+
+networks:
+  ares-networks: {}
